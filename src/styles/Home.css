@@ -1,0 +1,23 @@
+.main-slider {
+  @apply relative;
+  height: 350px;
+}
+
+.main-slider img {
+  @apply absolute h-full;
+}
+
+.main-slider-text-group {
+  @apply absolute left-1/2 top-1/2 w-full text-center text-white;
+  transform: translate(-50%, -50%);
+  max-width: 650px;
+}
+
+.main-slider-text-group h1 {
+  @apply font-bold;
+  font-size: 40px;
+}
+
+.main-slider-text-group h3 {
+  @apply font-bold;
+}

@@ -1,0 +1,14 @@
+.component-navbar {
+  @apply container flex items-center justify-between bg-white py-7 text-red-500;
+}
+
+.component-navbar .logo {
+  @apply text-2xl font-bold;
+}
+
+.component-navbar input {
+  @apply w-full rounded-md px-4 py-2 text-gray-800 focus:outline-none;
+  width: 395px;
+  height: 48px;
+  background-color: #f5f5f5;
+}

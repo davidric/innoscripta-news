@@ -1,9 +1,9 @@
 import React from 'react';
-import '../App.css';
+import '../styles/Home.css';
 
 const Article = () => {
   return (
-    <div className="App">
+    <div className="container">
       <header className="App-header">
         <p>Article</p>
       </header>
