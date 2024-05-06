@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { TextInput } from 'flowbite-react';
+import { HiSearch } from 'react-icons/hi';
 import bookmark from '../images/bookmark.svg';
 import '../styles/Navbar.css';
 
@@ -10,7 +12,9 @@ const Navbar = () => {
       </Link>
       <div className="flex">
         <div className="mx-6">
-          <input type="text" placeholder="Search anything..." />
+          <div className="max-w-md">
+            <TextInput id="search" type="text" rightIcon={HiSearch} placeholder="Search anything..." required />
+          </div>
         </div>
         <button>
           <img src={bookmark} alt="bookmark" />

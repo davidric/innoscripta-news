@@ -1,5 +1,5 @@
 .main-slider {
-  @apply relative;
+  @apply relative mb-6;
   height: 350px;
 }
 
@@ -13,6 +13,10 @@
   max-width: 650px;
 }
 
+.main-slider-text-group p {
+  @apply text-base;
+}
+
 .main-slider-text-group h1 {
   @apply font-bold;
   font-size: 40px;
@@ -20,4 +24,20 @@
 
 .main-slider-text-group h3 {
   @apply font-bold;
+}
+
+.news-label {
+  @apply mb-3.5 flex gap-1.5;
+}
+
+.filter-section {
+  @apply mb-4 flex justify-between;
+}
+
+.filter-section .search-label {
+  @apply flex items-center gap-3 opacity-75;
+}
+
+.filter-section .filter {
+  @apply flex gap-3;
 }

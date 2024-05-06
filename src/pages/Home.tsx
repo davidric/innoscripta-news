@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import { Button, Datepicker, Select } from 'flowbite-react';
 import '../styles/Home.css';
 import mainBackground from '../images/main-background.png';
+import markerRed from '../images/marker-red.svg';
 
 const Home = () => {
   return (
@@ -17,7 +19,34 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <p>Home</p>
+        <div className="news-label">
+          <img src={markerRed} alt="marker" />
+          <h3>Search For</h3>
+        </div>
+        <div className="filter-section">
+          <div className="search-label">
+            <h2>“ LATEST CURRENT FOOTBALL NEWS “</h2>
+            <p>100 Result</p>
+          </div>
+          <div className="filter">
+            <Datepicker maxDate={new Date()} />
+            <Select id="categories" required>
+              <option>Categories</option>
+              <option>Style</option>
+              <option>Health</option>
+              <option>Political</option>
+            </Select>
+            <Select id="sources" required>
+              <option>Select Source</option>
+              <option>Inews</option>
+              <option>BBC</option>
+              <option>News Creation</option>
+            </Select>
+            <Button color="light">Reset</Button>
+            <Button>Apply</Button>
+          </div>
+        </div>
+
         <Link to="/article" className="underline">
           Go to article
         </Link>
