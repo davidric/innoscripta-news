@@ -1,0 +1,19 @@
+.component-articles {
+  @apply grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+.component-articles .article-meta-data {
+  @apply text-sm text-gray-500 dark:text-gray-400;
+}
+
+.component-articles .article-description {
+  @apply font-normal text-gray-700 dark:text-gray-400;
+}
+
+.component-articles .footer-text {
+  @apply text-sm text-gray-500 dark:text-gray-400;
+}
+
+.component-articles .footer-text span {
+  color: #fc4308;
+}

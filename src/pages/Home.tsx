@@ -3,6 +3,7 @@ import { Button, Datepicker, Select } from 'flowbite-react';
 import '../styles/Home.css';
 import mainBackground from '../images/main-background.png';
 import markerRed from '../images/marker-red.svg';
+import Articles from '../components/Articles';
 
 const Home = () => {
   return (
@@ -23,7 +24,7 @@ const Home = () => {
           <img src={markerRed} alt="marker" />
           <h3>Search For</h3>
         </div>
-        <div className="filter-section">
+        <div className="section-filter">
           <div className="search-label">
             <h2>“ LATEST CURRENT FOOTBALL NEWS “</h2>
             <p>100 Result</p>
@@ -46,7 +47,9 @@ const Home = () => {
             <Button>Apply</Button>
           </div>
         </div>
-
+        <div className="section-articles">
+          <Articles />
+        </div>
         <Link to="/article" className="underline">
           Go to article
         </Link>
