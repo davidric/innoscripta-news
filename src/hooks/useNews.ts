@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import { toTitleCase } from '../helper/utils';
 import mediaSource from '../helper/media_sources.json';
 // import newsApiMock from '../mock/top-headlines.json';
+import { useDebounce } from './useDebounce';
 import { useGlobalStore } from '../store';
 
 interface Article {
@@ -29,6 +30,8 @@ export interface NewsResult {
 
 const useNews = () => {
   const { keyword } = useGlobalStore();
+  const debouncedKeyword = useDebounce(keyword);
+
   const getNewsNewsApi: () => Promise<NewsResult> = async () => {
     const response: NewsResult = await fetch(
       `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.REACT_APP_NEWSAPI_API_KEY}`,
@@ -56,7 +59,9 @@ const useNews = () => {
     isLoading,
     error,
     data: newsData,
-  } = useQuery<NewsResult, Error>('repoData', () => getNewsNewsApi(), { refetchOnWindowFocus: false });
+  } = useQuery<NewsResult, Error>(['newsAPI', debouncedKeyword], () => getNewsNewsApi(), {
+    refetchOnWindowFocus: false,
+  });
 
   const totalPages: number = Math.ceil(newsData?.totalResults ? newsData.totalResults / 20 : 1);
 
