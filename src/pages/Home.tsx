@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { Button, Datepicker, Select } from 'flowbite-react';
 import '../styles/Home.css';
 import mainBackground from '../images/main-background.png';
@@ -60,9 +59,6 @@ const Home = () => {
         <div className="section-articles">
           <Articles data={newsData} totalPages={totalPages} />
         </div>
-        <Link to="/article" className="underline">
-          Go to article
-        </Link>
       </div>
     </div>
   );

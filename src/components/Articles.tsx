@@ -23,12 +23,6 @@ const Articles = ({ data, totalPages }: Props) => {
             </div>
             <h5 className="article-title">{article.title}</h5>
             <div className="flex items-center gap-2">
-              <img
-                src="https://cdn.icon-icons.com/icons2/70/PNG/512/bbc_news_14062.png"
-                alt="source"
-                width={24}
-                height={24}
-              />
               <span className="article-meta-data">
                 {article.source.name} • {article.publishedAt}
               </span>
