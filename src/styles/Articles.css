@@ -2,8 +2,16 @@
   @apply grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
 }
 
+.component-articles .articles .card {
+  @apply border-none shadow-none;
+}
+
+.component-articles .articles .card > img {
+  @apply max-h-[200px] rounded-none object-cover sm:max-h-[150px];
+}
+
 .component-articles .articles .card > div {
-  @apply justify-start;
+  @apply justify-start px-0 pt-4;
 }
 
 .component-articles .article-title {
