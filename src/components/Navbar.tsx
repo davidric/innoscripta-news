@@ -3,8 +3,11 @@ import { TextInput } from 'flowbite-react';
 import { HiSearch } from 'react-icons/hi';
 import bookmark from '../images/bookmark.svg';
 import '../styles/Navbar.css';
+import { useGlobalStore } from '../store';
 
 const Navbar = () => {
+  const { setKeyword } = useGlobalStore();
+
   return (
     <nav className="component-navbar">
       <Link to="/" className="logo">
@@ -13,7 +16,13 @@ const Navbar = () => {
       <div className="flex">
         <div className="mx-6">
           <div className="max-w-md">
-            <TextInput id="search" type="text" rightIcon={HiSearch} placeholder="Search anything..." required />
+            <TextInput
+              id="search"
+              type="text"
+              rightIcon={HiSearch}
+              placeholder="Search anything..."
+              onChange={(e) => setKeyword(e.target.value)}
+            />
           </div>
         </div>
         <button>

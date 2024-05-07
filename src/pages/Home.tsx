@@ -4,8 +4,13 @@ import '../styles/Home.css';
 import mainBackground from '../images/main-background.png';
 import markerRed from '../images/marker-red.svg';
 import Articles from '../components/Articles';
+import { useGlobalStore } from '../store';
+import useNews from '../hooks/useNews';
 
 const Home = () => {
+  const { newsData, totalPages } = useNews();
+  const { keyword } = useGlobalStore();
+
   return (
     <div className="page-home">
       <div className="container">
@@ -22,13 +27,18 @@ const Home = () => {
         </div>
         <div className="news-label">
           <img src={markerRed} alt="marker" />
-          <h3>Search For</h3>
+          <h3>{keyword ? 'Search For' : 'Popular posts'}</h3>
         </div>
         <div className="section-filter">
           <div className="search-label">
-            <h2>“ LATEST CURRENT FOOTBALL NEWS “</h2>
-            <p>100 Result</p>
+            {keyword && newsData?.articles?.length && (
+              <>
+                <h2>“ {keyword} “</h2>
+                <p>{newsData.totalResults || 0} Result</p>
+              </>
+            )}
           </div>
+
           <div className="filter">
             <Datepicker maxDate={new Date()} />
             <Select id="categories" required>
@@ -48,7 +58,7 @@ const Home = () => {
           </div>
         </div>
         <div className="section-articles">
-          <Articles />
+          <Articles data={newsData} totalPages={totalPages} />
         </div>
         <Link to="/article" className="underline">
           Go to article

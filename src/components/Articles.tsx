@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { Card, Pagination } from 'flowbite-react';
 import '../styles/Articles.css';
-import useNews from '../hooks/useNews';
+import { NewsResult } from '../hooks/useNews';
 
-const Articles = () => {
-  const { newsData, totalPages } = useNews();
+interface Props {
+  data?: NewsResult;
+  totalPages: number;
+}
+const Articles = ({ data, totalPages }: Props) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const onPageChange = (page: number) => setCurrentPage(page);
@@ -12,7 +15,7 @@ const Articles = () => {
   return (
     <div className="component-articles">
       <div className="articles">
-        {newsData?.articles?.map((article, i) => (
+        {data?.articles?.map((article, i) => (
           <Card key={i} className="card" imgAlt={article.title} imgSrc={article.urlToImage || ''}>
             <div className="footer-text">
               <span className="category">{article.category}</span> {article.author && '•'}{' '}

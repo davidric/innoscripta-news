@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import { toTitleCase } from '../helper/utils';
 import mediaSource from '../helper/media_sources.json';
 // import newsApiMock from '../mock/top-headlines.json';
+import { useGlobalStore } from '../store';
 
 interface Article {
   source: {
@@ -20,13 +21,14 @@ interface Article {
   category: string;
 }
 
-interface NewsResult {
+export interface NewsResult {
   articles: Article[];
   status: string;
   totalResults: number;
 }
 
 const useNews = () => {
+  const { keyword } = useGlobalStore();
   const getNewsNewsApi: () => Promise<NewsResult> = async () => {
     const response: NewsResult = await fetch(
       `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.REACT_APP_NEWSAPI_API_KEY}`,
