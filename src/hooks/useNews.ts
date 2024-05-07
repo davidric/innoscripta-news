@@ -29,13 +29,15 @@ export interface NewsResult {
 }
 
 const useNews = () => {
-  const { keyword } = useGlobalStore();
+  const { keyword, page } = useGlobalStore();
   const debouncedKeyword = useDebounce(keyword);
 
   const getNewsNewsApi: () => Promise<NewsResult> = async () => {
-    const response: NewsResult = await fetch(
-      `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.REACT_APP_NEWSAPI_API_KEY}`,
-    ).then((res) => res.json());
+    const url = debouncedKeyword
+      ? `https://newsapi.org/v2/everything?pageSize=20&page=${page}&q=${debouncedKeyword}&apiKey=${process.env.REACT_APP_NEWSAPI_API_KEY}`
+      : `https://newsapi.org/v2/top-headlines?country=us&pageSize=20&page=${page}&apiKey=${process.env.REACT_APP_NEWSAPI_API_KEY}`;
+
+    const response: NewsResult = await fetch(url).then((res) => res.json());
 
     // const response = newsApiMock;
 
@@ -59,7 +61,7 @@ const useNews = () => {
     isLoading,
     error,
     data: newsData,
-  } = useQuery<NewsResult, Error>(['newsAPI', debouncedKeyword], () => getNewsNewsApi(), {
+  } = useQuery<NewsResult, Error>(['newsAPI', debouncedKeyword, page], () => getNewsNewsApi(), {
     refetchOnWindowFocus: false,
   });
 

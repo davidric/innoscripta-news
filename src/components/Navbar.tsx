@@ -6,7 +6,7 @@ import '../styles/Navbar.css';
 import { useGlobalStore } from '../store';
 
 const Navbar = () => {
-  const { setKeyword } = useGlobalStore();
+  const { keyword, setKeyword } = useGlobalStore();
 
   return (
     <nav className="component-navbar">
@@ -21,6 +21,7 @@ const Navbar = () => {
               type="text"
               rightIcon={HiSearch}
               placeholder="Search anything..."
+              value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
             />
           </div>

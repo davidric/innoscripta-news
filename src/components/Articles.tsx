@@ -1,16 +1,16 @@
-import { useState } from 'react';
 import { Card, Pagination } from 'flowbite-react';
 import '../styles/Articles.css';
 import { NewsResult } from '../hooks/useNews';
+import { useGlobalStore } from '../store';
 
 interface Props {
   data?: NewsResult;
   totalPages: number;
 }
 const Articles = ({ data, totalPages }: Props) => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const { page, setPage } = useGlobalStore();
 
-  const onPageChange = (page: number) => setCurrentPage(page);
+  const onPageChange = (page: number) => setPage(page);
 
   return (
     <div className="component-articles">
@@ -39,7 +39,7 @@ const Articles = ({ data, totalPages }: Props) => {
         ))}
       </div>
       <div className="pagination">
-        <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} showIcons />
+        <Pagination currentPage={page} totalPages={totalPages} onPageChange={onPageChange} showIcons />
       </div>
     </div>
   );
