@@ -2,6 +2,14 @@
   @apply grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
 }
 
+.component-articles .articles .card > div {
+  @apply justify-start;
+}
+
+.component-articles .article-title {
+  @apply text-2xl font-bold tracking-tight text-gray-900 dark:text-white;
+}
+
 .component-articles .article-meta-data {
   @apply text-sm text-gray-500 dark:text-gray-400;
 }
@@ -14,8 +22,12 @@
   @apply text-sm text-gray-500 dark:text-gray-400;
 }
 
-.component-articles .footer-text span {
+.component-articles .footer-text .category {
   color: #fc4308;
+}
+
+.component-articles .footer-text .author {
+  @apply text-slate-400;
 }
 
 .component-articles .pagination {

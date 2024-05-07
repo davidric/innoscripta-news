@@ -1,0 +1,642 @@
+[
+  {
+    "id": "abc-news",
+    "name": "ABC News",
+    "category": "general"
+  },
+  {
+    "id": "abc-news-au",
+    "name": "ABC News (AU)",
+    "category": "general"
+  },
+  {
+    "id": "aftenposten",
+    "name": "Aftenposten",
+    "category": "general"
+  },
+  {
+    "id": "al-jazeera-english",
+    "name": "Al Jazeera English",
+    "category": "general"
+  },
+  {
+    "id": "ansa",
+    "name": "ANSA.it",
+    "category": "general"
+  },
+  {
+    "id": "argaam",
+    "name": "Argaam",
+    "category": "business"
+  },
+  {
+    "id": "ars-technica",
+    "name": "Ars Technica",
+    "category": "technology"
+  },
+  {
+    "id": "ary-news",
+    "name": "Ary News",
+    "category": "general"
+  },
+  {
+    "id": "associated-press",
+    "name": "Associated Press",
+    "category": "general"
+  },
+  {
+    "id": "australian-financial-review",
+    "name": "Australian Financial Review",
+    "category": "business"
+  },
+  {
+    "id": "axios",
+    "name": "Axios",
+    "category": "general"
+  },
+  {
+    "id": "bbc-news",
+    "name": "BBC News",
+    "category": "general"
+  },
+  {
+    "id": "bbc-sport",
+    "name": "BBC Sport",
+    "category": "sports"
+  },
+  {
+    "id": "bild",
+    "name": "Bild",
+    "category": "general"
+  },
+  {
+    "id": "blasting-news-br",
+    "name": "Blasting News (BR)",
+    "category": "general"
+  },
+  {
+    "id": "bleacher-report",
+    "name": "Bleacher Report",
+    "category": "sports"
+  },
+  {
+    "id": "bloomberg",
+    "name": "Bloomberg",
+    "category": "business"
+  },
+  {
+    "id": "breitbart-news",
+    "name": "Breitbart News",
+    "category": "general"
+  },
+  {
+    "id": "business-insider",
+    "name": "Business Insider",
+    "category": "business"
+  },
+  {
+    "id": "business-insider-uk",
+    "name": "Business Insider (UK)",
+    "category": "business"
+  },
+  {
+    "id": "buzzfeed",
+    "name": "Buzzfeed",
+    "category": "entertainment"
+  },
+  {
+    "id": "cbc-news",
+    "name": "CBC News",
+    "category": "general"
+  },
+  {
+    "id": "cbs-news",
+    "name": "CBS News",
+    "category": "general"
+  },
+  {
+    "id": "cnn",
+    "name": "CNN",
+    "category": "general"
+  },
+  {
+    "id": "cnn-es",
+    "name": "CNN Spanish",
+    "category": "general"
+  },
+  {
+    "id": "crypto-coins-news",
+    "name": "Crypto Coins News",
+    "category": "technology"
+  },
+  {
+    "id": "der-tagesspiegel",
+    "name": "Der Tagesspiegel",
+    "category": "general"
+  },
+  {
+    "id": "die-zeit",
+    "name": "Die Zeit",
+    "category": "business"
+  },
+  {
+    "id": "el-mundo",
+    "name": "El Mundo",
+    "category": "general"
+  },
+  {
+    "id": "engadget",
+    "name": "Engadget",
+    "category": "technology"
+  },
+  {
+    "id": "entertainment-weekly",
+    "name": "Entertainment Weekly",
+    "category": "entertainment"
+  },
+  {
+    "id": "espn",
+    "name": "ESPN",
+    "category": "sports"
+  },
+  {
+    "id": "espn-cric-info",
+    "name": "ESPN Cric Info",
+    "category": "sports"
+  },
+  {
+    "id": "financial-post",
+    "name": "Financial Post",
+    "category": "business"
+  },
+  {
+    "id": "focus",
+    "name": "Focus",
+    "category": "general"
+  },
+  {
+    "id": "football-italia",
+    "name": "Football Italia",
+    "category": "sports"
+  },
+  {
+    "id": "fortune",
+    "name": "Fortune",
+    "category": "business"
+  },
+  {
+    "id": "four-four-two",
+    "name": "FourFourTwo",
+    "category": "sports"
+  },
+  {
+    "id": "fox-news",
+    "name": "Fox News",
+    "category": "general"
+  },
+  {
+    "id": "fox-sports",
+    "name": "Fox Sports",
+    "category": "sports"
+  },
+  {
+    "id": "globo",
+    "name": "Globo",
+    "category": "general"
+  },
+  {
+    "id": "google-news",
+    "name": "Google News",
+    "category": "general"
+  },
+  {
+    "id": "google-news-ar",
+    "name": "Google News (Argentina)",
+    "category": "general"
+  },
+  {
+    "id": "google-news-au",
+    "name": "Google News (Australia)",
+    "category": "general"
+  },
+  {
+    "id": "google-news-br",
+    "name": "Google News (Brasil)",
+    "category": "general"
+  },
+  {
+    "id": "google-news-ca",
+    "name": "Google News (Canada)",
+    "category": "general"
+  },
+  {
+    "id": "google-news-fr",
+    "name": "Google News (France)",
+    "category": "general"
+  },
+  {
+    "id": "google-news-in",
+    "name": "Google News (India)",
+    "category": "general"
+  },
+  {
+    "id": "google-news-is",
+    "name": "Google News (Israel)",
+    "category": "general"
+  },
+  {
+    "id": "google-news-it",
+    "name": "Google News (Italy)",
+    "category": "general"
+  },
+  {
+    "id": "google-news-ru",
+    "name": "Google News (Russia)",
+    "category": "general"
+  },
+  {
+    "id": "google-news-sa",
+    "name": "Google News (Saudi Arabia)",
+    "category": "general"
+  },
+  {
+    "id": "google-news-uk",
+    "name": "Google News (UK)",
+    "category": "general"
+  },
+  {
+    "id": "goteborgs-posten",
+    "name": "Göteborgs-Posten",
+    "category": "general"
+  },
+  {
+    "id": "gruenderszene",
+    "name": "Gruenderszene",
+    "category": "technology"
+  },
+  {
+    "id": "hacker-news",
+    "name": "Hacker News",
+    "category": "technology"
+  },
+  {
+    "id": "handelsblatt",
+    "name": "Handelsblatt",
+    "category": "business"
+  },
+  {
+    "id": "ign",
+    "name": "IGN",
+    "category": "entertainment"
+  },
+  {
+    "id": "il-sole-24-ore",
+    "name": "Il Sole 24 Ore",
+    "category": "business"
+  },
+  {
+    "id": "independent",
+    "name": "Independent",
+    "category": "general"
+  },
+  {
+    "id": "infobae",
+    "name": "Infobae",
+    "category": "general"
+  },
+  {
+    "id": "info-money",
+    "name": "InfoMoney",
+    "category": "business"
+  },
+  {
+    "id": "la-gaceta",
+    "name": "La Gaceta",
+    "category": "general"
+  },
+  {
+    "id": "la-nacion",
+    "name": "La Nacion",
+    "category": "general"
+  },
+  {
+    "id": "la-repubblica",
+    "name": "La Repubblica",
+    "category": "general"
+  },
+  {
+    "id": "le-monde",
+    "name": "Le Monde",
+    "category": "general"
+  },
+  {
+    "id": "lenta",
+    "name": "Lenta",
+    "category": "general"
+  },
+  {
+    "id": "lequipe",
+    "name": "L'equipe",
+    "category": "sports"
+  },
+  {
+    "id": "les-echos",
+    "name": "Les Echos",
+    "category": "business"
+  },
+  {
+    "id": "liberation",
+    "name": "Libération",
+    "category": "general"
+  },
+  {
+    "id": "marca",
+    "name": "Marca",
+    "category": "sports"
+  },
+  {
+    "id": "mashable",
+    "name": "Mashable",
+    "category": "entertainment"
+  },
+  {
+    "id": "medical-news-today",
+    "name": "Medical News Today",
+    "category": "health"
+  },
+  {
+    "id": "msnbc",
+    "name": "MSNBC",
+    "category": "general"
+  },
+  {
+    "id": "mtv-news",
+    "name": "MTV News",
+    "category": "entertainment"
+  },
+  {
+    "id": "mtv-news-uk",
+    "name": "MTV News (UK)",
+    "category": "entertainment"
+  },
+  {
+    "id": "national-geographic",
+    "name": "National Geographic",
+    "category": "science"
+  },
+  {
+    "id": "national-review",
+    "name": "National Review",
+    "category": "general"
+  },
+  {
+    "id": "nbc-news",
+    "name": "NBC News",
+    "category": "general"
+  },
+  {
+    "id": "news24",
+    "name": "News24",
+    "category": "general"
+  },
+  {
+    "id": "new-scientist",
+    "name": "New Scientist",
+    "category": "science"
+  },
+  {
+    "id": "news-com-au",
+    "name": "News.com.au",
+    "category": "general"
+  },
+  {
+    "id": "newsweek",
+    "name": "Newsweek",
+    "category": "general"
+  },
+  {
+    "id": "new-york-magazine",
+    "name": "New York Magazine",
+    "category": "general"
+  },
+  {
+    "id": "next-big-future",
+    "name": "Next Big Future",
+    "category": "science"
+  },
+  {
+    "id": "nfl-news",
+    "name": "NFL News",
+    "category": "sports"
+  },
+  {
+    "id": "nhl-news",
+    "name": "NHL News",
+    "category": "sports"
+  },
+  {
+    "id": "nrk",
+    "name": "NRK",
+    "category": "general"
+  },
+  {
+    "id": "politico",
+    "name": "Politico",
+    "category": "general"
+  },
+  {
+    "id": "polygon",
+    "name": "Polygon",
+    "category": "entertainment"
+  },
+  {
+    "id": "rbc",
+    "name": "RBC",
+    "category": "general"
+  },
+  {
+    "id": "recode",
+    "name": "Recode",
+    "category": "technology"
+  },
+  {
+    "id": "reddit-r-all",
+    "name": "Reddit /r/all",
+    "category": "general"
+  },
+  {
+    "id": "reuters",
+    "name": "Reuters",
+    "category": "general"
+  },
+  {
+    "id": "rt",
+    "name": "RT",
+    "category": "general"
+  },
+  {
+    "id": "rte",
+    "name": "RTE",
+    "category": "general"
+  },
+  {
+    "id": "rtl-nieuws",
+    "name": "RTL Nieuws",
+    "category": "general"
+  },
+  {
+    "id": "sabq",
+    "name": "SABQ",
+    "category": "general"
+  },
+  {
+    "id": "spiegel-online",
+    "name": "Spiegel Online",
+    "category": "general"
+  },
+  {
+    "id": "svenska-dagbladet",
+    "name": "Svenska Dagbladet",
+    "category": "general"
+  },
+  {
+    "id": "t3n",
+    "name": "T3n",
+    "category": "technology"
+  },
+  {
+    "id": "talksport",
+    "name": "TalkSport",
+    "category": "sports"
+  },
+  {
+    "id": "techcrunch",
+    "name": "TechCrunch",
+    "category": "technology"
+  },
+  {
+    "id": "techcrunch-cn",
+    "name": "TechCrunch (CN)",
+    "category": "technology"
+  },
+  {
+    "id": "techradar",
+    "name": "TechRadar",
+    "category": "technology"
+  },
+  {
+    "id": "the-american-conservative",
+    "name": "The American Conservative",
+    "category": "general"
+  },
+  {
+    "id": "the-globe-and-mail",
+    "name": "The Globe And Mail",
+    "category": "general"
+  },
+  {
+    "id": "the-hill",
+    "name": "The Hill",
+    "category": "general"
+  },
+  {
+    "id": "the-hindu",
+    "name": "The Hindu",
+    "category": "general"
+  },
+  {
+    "id": "the-huffington-post",
+    "name": "The Huffington Post",
+    "category": "general"
+  },
+  {
+    "id": "the-irish-times",
+    "name": "The Irish Times",
+    "category": "general"
+  },
+  {
+    "id": "the-jerusalem-post",
+    "name": "The Jerusalem Post",
+    "category": "general"
+  },
+  {
+    "id": "the-lad-bible",
+    "name": "The Lad Bible",
+    "category": "entertainment"
+  },
+  {
+    "id": "the-next-web",
+    "name": "The Next Web",
+    "category": "technology"
+  },
+  {
+    "id": "the-sport-bible",
+    "name": "The Sport Bible",
+    "category": "sports"
+  },
+  {
+    "id": "the-times-of-india",
+    "name": "The Times of India",
+    "category": "general"
+  },
+  {
+    "id": "the-verge",
+    "name": "The Verge",
+    "category": "technology"
+  },
+  {
+    "id": "the-wall-street-journal",
+    "name": "The Wall Street Journal",
+    "category": "business"
+  },
+  {
+    "id": "the-washington-post",
+    "name": "The Washington Post",
+    "category": "general"
+  },
+  {
+    "id": "the-washington-times",
+    "name": "The Washington Times",
+    "category": "general"
+  },
+  {
+    "id": "time",
+    "name": "Time",
+    "category": "general"
+  },
+  {
+    "id": "usa-today",
+    "name": "USA Today",
+    "category": "general"
+  },
+  {
+    "id": "vice-news",
+    "name": "Vice News",
+    "category": "general"
+  },
+  {
+    "id": "wired",
+    "name": "Wired",
+    "category": "technology"
+  },
+  {
+    "id": "wired-de",
+    "name": "Wired.de",
+    "category": "technology"
+  },
+  {
+    "id": "wirtschafts-woche",
+    "name": "Wirtschafts Woche",
+    "category": "business"
+  },
+  {
+    "id": "xinhua-net",
+    "name": "Xinhua Net",
+    "category": "general"
+  },
+  {
+    "id": "ynet",
+    "name": "Ynet",
+    "category": "general"
+  }
+]
