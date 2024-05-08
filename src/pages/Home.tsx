@@ -1,10 +1,10 @@
-import { Button, Datepicker, Select } from 'flowbite-react';
 import '../styles/Home.css';
 import mainBackground from '../images/main-background.png';
 import markerRed from '../images/marker-red.svg';
 import Articles from '../components/Articles';
 import { useGlobalStore } from '../store';
 import useNews from '../hooks/useNews';
+import Filter from '../components/Filter';
 
 const Home = () => {
   const { newsData, totalPages } = useNews();
@@ -37,24 +37,7 @@ const Home = () => {
               </>
             )}
           </div>
-
-          <div className="filter">
-            <Datepicker maxDate={new Date()} />
-            <Select id="categories" required>
-              <option>Categories</option>
-              <option>Style</option>
-              <option>Health</option>
-              <option>Political</option>
-            </Select>
-            <Select id="sources" required>
-              <option>Select Source</option>
-              <option>Inews</option>
-              <option>BBC</option>
-              <option>News Creation</option>
-            </Select>
-            <Button color="light">Reset</Button>
-            <Button>Apply</Button>
-          </div>
+          <Filter />
         </div>
         <div className="section-articles">
           <Articles data={newsData} totalPages={totalPages} />
