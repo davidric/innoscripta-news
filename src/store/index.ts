@@ -18,7 +18,7 @@ interface FilterType {
 }
 
 const initialFilterValues: FilterType = {
-  date: moment(new Date()).format('YYYY-MM-DD'),
+  date: moment().add(-1, 'days').format('YYYY-MM-DD'),
   category: '',
   source: '',
 };
