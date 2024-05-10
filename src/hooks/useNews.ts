@@ -26,6 +26,7 @@ export interface NewsResult {
   articles: Article[];
   status: string;
   totalResults: number;
+  message?: string;
 }
 
 const useNews = () => {
@@ -38,19 +39,24 @@ const useNews = () => {
       ? `https://newsapi.org/v2/everything?pageSize=20&page=${page}&q=${keyword}&from=${filter.date}&to=${filter.date}&apiKey=${process.env.REACT_APP_NEWSAPI_API_KEY}`
       : `https://newsapi.org/v2/top-headlines?country=us&pageSize=20&page=${page}&category=${filter.category}&apiKey=${process.env.REACT_APP_NEWSAPI_API_KEY}`;
 
-    const response: NewsResult = (await fetch(url).then((res) => res.json())) || [];
+    const response: NewsResult = await fetch(url).then((res) => res?.json());
+
+    if (response?.status !== 'ok') {
+      alert(response?.message || 'Something went wrong!');
+    }
 
     // const response = newsApiMock;
 
-    const articles: Article[] = response.articles.map((article) => ({
-      ...article,
-      publishedAt: moment(article.publishedAt).format('DD MMM YYYY'),
-      timeAgo: moment(article.publishedAt).fromNow(),
-      author: toTitleCase(article.author),
-      category: toTitleCase(
-        mediaSource.find((s) => s.id === article.source.id || s.name === article.source.name)?.category || 'General',
-      ),
-    }));
+    const articles: Article[] =
+      response.articles?.map((article) => ({
+        ...article,
+        publishedAt: moment(article.publishedAt).format('DD MMM YYYY'),
+        timeAgo: moment(article.publishedAt).fromNow(),
+        author: toTitleCase(article.author),
+        category: toTitleCase(
+          mediaSource.find((s) => s.id === article.source.id || s.name === article.source.name)?.category || 'General',
+        ),
+      })) || [];
 
     const filteredArticles = articles.filter((article) => !!article.description && !!article.urlToImage);
 
