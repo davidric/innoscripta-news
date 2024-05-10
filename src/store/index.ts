@@ -28,7 +28,7 @@ const initialFilterValues: FilterType = {
 export const useGlobalStore = create<GlobalState>((set, get) => ({
   keyword: '',
   setKeyword: (value: string) => {
-    set({ keyword: value, page: 1, filter: { ...get().filter, category: '' } });
+    set({ keyword: value, page: 1, filter: { ...get().filter, category: '', source: '' } });
   },
   filter: initialFilterValues,
   setFilter: (value: FilterType) => set({ filter: value }),

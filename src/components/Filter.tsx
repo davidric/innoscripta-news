@@ -3,11 +3,12 @@ import { useFormik } from 'formik';
 import moment from 'moment';
 import { initialDateValue, useGlobalStore } from '../store';
 import { ChangeEvent, useEffect, useState } from 'react';
+import mediaSource from '../helper/media_sources.json';
 
 const initialDisabledFields = {
   date: false,
   category: false,
-  source: true,
+  source: false,
 };
 
 const Filter = () => {
@@ -19,26 +20,31 @@ const Filter = () => {
     onSubmit: (values) => setFilter(values),
   });
 
+  const submitDisabled = keyword === '' && formik.values.category === '' && formik.values.source === '';
+
   const handleResetFilter = () => {
     resetFilter();
     formik.resetForm();
     setDisabledFields(initialDisabledFields);
   };
 
+  const handleFieldChange = (e: ChangeEvent<HTMLSelectElement>, fieldName: string) => {
+    formik.handleChange(e);
+    formik.setFieldValue('date', initialDateValue);
+    formik.setFieldValue(fieldName, '');
+    const disable = e.target.value !== '';
+    setDisabledFields((prev) => ({ ...prev, date: disable, [fieldName]: disable }));
+  };
+
   useEffect(() => {
     if (keyword !== '') {
       formik.setFieldValue('category', '');
-      setDisabledFields((prev) => ({ ...prev, category: true }));
+      formik.setFieldValue('source', '');
+      setDisabledFields((prev) => ({ ...prev, category: true, source: true }));
     } else {
       setDisabledFields(initialDisabledFields);
     }
   }, [keyword === '']);
-
-  const handleChangeCategory = (e: ChangeEvent<HTMLSelectElement>) => {
-    formik.handleChange(e);
-    formik.setFieldValue('date', initialDateValue);
-    setDisabledFields((prev) => ({ ...prev, date: e.target.value !== '' }));
-  };
 
   return (
     <nav className="component-filter">
@@ -53,7 +59,7 @@ const Filter = () => {
         />
         <Select
           name="category"
-          onChange={handleChangeCategory}
+          onChange={(e) => handleFieldChange(e, 'source')}
           value={formik.values.category}
           disabled={disabledFields.category}
         >
@@ -68,19 +74,21 @@ const Filter = () => {
         </Select>
         <Select
           name="source"
-          onChange={formik.handleChange}
+          onChange={(e) => handleFieldChange(e, 'category')}
           value={formik.values.source}
           disabled={disabledFields.source}
         >
-          <option>Select Source</option>
-          <option>Inews</option>
-          <option>BBC</option>
-          <option>News Creation</option>
+          <option value="">Select Source</option>
+          {mediaSource.map((source, i) => (
+            <option key={i} value={source.id}>
+              {source.name}
+            </option>
+          ))}
         </Select>
         <Button color="light" onClick={handleResetFilter}>
           Reset
         </Button>
-        <Button onClick={() => formik.handleSubmit()} disabled={keyword === '' && formik.values.category === ''}>
+        <Button onClick={() => formik.handleSubmit()} disabled={submitDisabled}>
           Apply
         </Button>
       </div>

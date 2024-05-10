@@ -35,9 +35,12 @@ const useNews = () => {
   const debouncedParams = useDebounce(JSON.stringify(params));
 
   const getNewsNewsApi: () => Promise<NewsResult> = async () => {
+    const categoryOrSourceQuery = filter.category ? `category=${filter.category}` : `sources=${filter.source}`;
+    const additionalQuery = filter.category === '' && filter.source === '' ? 'country=us' : categoryOrSourceQuery;
+
     const url = keyword
       ? `https://newsapi.org/v2/everything?pageSize=20&page=${page}&q=${keyword}&from=${filter.date}&to=${filter.date}&apiKey=${process.env.REACT_APP_NEWSAPI_API_KEY}`
-      : `https://newsapi.org/v2/top-headlines?country=us&pageSize=20&page=${page}&category=${filter.category}&apiKey=${process.env.REACT_APP_NEWSAPI_API_KEY}`;
+      : `https://newsapi.org/v2/top-headlines?pageSize=20&page=${page}&${additionalQuery}&apiKey=${process.env.REACT_APP_NEWSAPI_API_KEY}`;
 
     const response: NewsResult = await fetch(url).then((res) => res?.json());
 
