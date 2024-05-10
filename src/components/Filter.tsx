@@ -52,6 +52,8 @@ const Filter = () => {
         <Datepicker
           minDate={new Date(moment().add(-30, 'days').format('YYYY-MM-DD'))}
           maxDate={new Date(moment().add(-1, 'days').format('YYYY-MM-DD'))}
+          showTodayButton={false}
+          showClearButton={false}
           name="date"
           onSelectedDateChanged={(value) => formik.setFieldValue('date', moment(value).format('YYYY-MM-DD'))}
           value={formik.values.date}

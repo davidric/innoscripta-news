@@ -7,11 +7,11 @@
 }
 
 .main-slider img {
-  @apply absolute h-full;
+  @apply absolute h-full rounded object-cover lg:rounded-lg;
 }
 
 .main-slider-text-group {
-  @apply absolute left-1/2 top-1/2 w-full text-center text-white;
+  @apply absolute left-1/2 top-1/2 w-full p-4 text-center text-white lg:p-0;
   transform: translate(-50%, -50%);
   max-width: 650px;
 }
@@ -21,8 +21,7 @@
 }
 
 .main-slider-text-group h1 {
-  @apply font-bold;
-  font-size: 40px;
+  @apply my-4 text-3xl font-bold lg:text-[40px];
 }
 
 .main-slider-text-group h3 {
@@ -34,13 +33,25 @@
 }
 
 .section-filter {
-  @apply mb-5 flex justify-between;
+  @apply mb-6 flex flex-col justify-between gap-4 sm:mb-5 lg:flex-row lg:gap-6;
 }
 
 .section-filter .search-label {
-  @apply flex items-center gap-3 opacity-75;
+  @apply flex w-auto basis-7/12 flex-wrap gap-3 opacity-75 sm:flex-nowrap;
+}
+
+.section-filter .search-label h2 {
+  @apply flex w-full break-words;
+}
+
+.section-filter .search-label p {
+  @apply flex items-center whitespace-nowrap sm:h-[42px];
+}
+
+.section-filter .component-filter {
+  @apply w-full;
 }
 
 .section-filter .filter {
-  @apply flex gap-3;
+  @apply flex flex-col justify-end gap-3 sm:flex-row;
 }

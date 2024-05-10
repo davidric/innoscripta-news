@@ -7,6 +7,5 @@
 }
 
 .component-navbar input {
-  width: 395px;
-  height: 48px;
+  @apply h-[48px] sm:w-[395px];
 }
