@@ -30,12 +30,13 @@ export interface NewsResult {
 
 const useNews = () => {
   const { filter, keyword, page } = useGlobalStore();
-  const debouncedKeyword = useDebounce(keyword);
+  const params = { filter, keyword, page };
+  const debouncedParams = useDebounce(JSON.stringify(params));
 
   const getNewsNewsApi: () => Promise<NewsResult> = async () => {
-    const url = debouncedKeyword
-      ? `https://newsapi.org/v2/everything?pageSize=20&page=${page}&q=${debouncedKeyword}&from=${filter.date}&to=${filter.date}&apiKey=${process.env.REACT_APP_NEWSAPI_API_KEY}`
-      : `https://newsapi.org/v2/top-headlines?country=us&pageSize=20&page=${page}&apiKey=${process.env.REACT_APP_NEWSAPI_API_KEY}`;
+    const url = keyword
+      ? `https://newsapi.org/v2/everything?pageSize=20&page=${page}&q=${keyword}&from=${filter.date}&to=${filter.date}&apiKey=${process.env.REACT_APP_NEWSAPI_API_KEY}`
+      : `https://newsapi.org/v2/top-headlines?country=us&pageSize=20&page=${page}&category=${filter.category}&apiKey=${process.env.REACT_APP_NEWSAPI_API_KEY}`;
 
     const response: NewsResult = (await fetch(url).then((res) => res.json())) || [];
 
@@ -61,7 +62,7 @@ const useNews = () => {
     isLoading,
     error,
     data: newsData,
-  } = useQuery<NewsResult, Error>(['newsAPI', debouncedKeyword, page, filter], () => getNewsNewsApi(), {
+  } = useQuery<NewsResult, Error>(['newsAPI', debouncedParams], () => getNewsNewsApi(), {
     refetchOnWindowFocus: false,
     retry: false,
   });

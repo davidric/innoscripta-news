@@ -30,10 +30,10 @@ const Home = () => {
         </div>
         <div className="section-filter">
           <div className="search-label">
-            {keyword && newsData?.articles?.length && (
+            {keyword && !!newsData?.articles?.length && (
               <>
                 <h2>“ {keyword} “</h2>
-                <p>{newsData.totalResults || 0} Result</p>
+                <p>{newsData.totalResults} Result</p>
               </>
             )}
           </div>

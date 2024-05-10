@@ -17,18 +17,22 @@ interface FilterType {
   source: string;
 }
 
+export const initialDateValue = moment().add(-1, 'days').format('YYYY-MM-DD');
+
 const initialFilterValues: FilterType = {
-  date: moment().add(-1, 'days').format('YYYY-MM-DD'),
+  date: initialDateValue,
   category: '',
   source: '',
 };
 
-export const useGlobalStore = create<GlobalState>((set) => ({
+export const useGlobalStore = create<GlobalState>((set, get) => ({
   keyword: '',
-  setKeyword: (value: string) => set({ keyword: value, page: 1 }),
+  setKeyword: (value: string) => {
+    set({ keyword: value, page: 1, filter: { ...get().filter, category: '' } });
+  },
   filter: initialFilterValues,
   setFilter: (value: FilterType) => set({ filter: value }),
-  resetFilter: () => set({ filter: initialFilterValues }),
+  resetFilter: () => set({ filter: initialFilterValues, keyword: '', page: 1 }),
   page: 1,
   setPage: (value: number) => set({ page: value }),
 }));
