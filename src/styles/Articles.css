@@ -6,6 +6,10 @@
   @apply border-none shadow-none;
 }
 
+.component-articles .articles .card:hover {
+  @apply opacity-80;
+}
+
 .component-articles .articles .card > img {
   @apply max-h-[200px] rounded-none object-cover sm:max-h-[150px];
 }

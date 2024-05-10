@@ -20,7 +20,13 @@ const Articles = ({ data, totalPages, isLoading }: Props) => {
         {isLoading && <Skeletons />}
         {!isLoading &&
           data?.articles?.map((article, i) => (
-            <Card key={i} className="card" imgAlt={article.title} imgSrc={article.urlToImage || ''}>
+            <Card
+              key={i}
+              className="card"
+              imgAlt={article.title}
+              imgSrc={article.urlToImage || ''}
+              onClick={() => window.open(article?.url || '#', '_blank')}
+            >
               <div className="footer-text">
                 <span className="category">{article.category}</span> {article.author && '•'}{' '}
                 <span className="author">{article.author}</span>

@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+**Note: This app is fetching news data from [News API](https://newsapi.org/) using the Developer plan. Requests from the browser are not allowed on the Developer plan, except from localhost.**
+
 ## Available Scripts
 
 In the project directory, you can run:
