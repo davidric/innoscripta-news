@@ -7,7 +7,7 @@ import useNews from '../hooks/useNews';
 import Filter from '../components/Filter';
 
 const Home = () => {
-  const { newsData, totalPages } = useNews();
+  const { newsData, totalPages, isLoading } = useNews();
   const { keyword } = useGlobalStore();
 
   return (
@@ -40,7 +40,7 @@ const Home = () => {
           <Filter />
         </div>
         <div className="section-articles">
-          <Articles data={newsData} totalPages={totalPages} />
+          <Articles data={newsData} totalPages={totalPages} isLoading={isLoading} />
         </div>
       </div>
     </div>
