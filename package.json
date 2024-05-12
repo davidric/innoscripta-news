@@ -2,6 +2,7 @@
   "name": "innoscripta-news",
   "version": "0.1.0",
   "private": false,
+  "author": "David Ricardo",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -2,7 +2,21 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-**Note: This app is fetching news data from [News API](https://newsapi.org/) using the Developer plan. Requests from the browser are not allowed on the Developer plan, except from localhost.**
+**Note: This app is fetching news data from [News API](https://newsapi.org/) using the Developer plan. Requests from the browser are not allowed on the Developer plan, except from localhost. You might find that not all filters can work simultaneously. This limitation is due to constraints within the [News API](https://newsapi.org/).**
+
+## Docker Run
+
+1. Create docker image
+
+```
+$ docker build -t innoscripta-news:latest .
+```
+
+2. Running docker container
+
+```
+$ docker run --name innoscripta-news -it -p 3000:3000 innoscripta-news:latest
+```
 
 ## Available Scripts
 
@@ -30,3 +44,5 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+**_Author: [David Ricardo](https://cv.davidrica.com)_**
